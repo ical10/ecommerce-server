@@ -11,7 +11,8 @@
     "db:create:test": "NODE_ENV=test npm run db:create",
     "db:migrate:test": "NODE_ENV=test npm run db:migrate",
     "dev": "NODE_ENV=development nodemon bin/http.js",
-    "test": "NODE_ENV=test npx jest"
+    "test": "NODE_ENV=test npx jest",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
