@@ -3,6 +3,10 @@
 This server is built with test suites with TDD.
 For deployed version, please visit https://ecommerce-cms-esd20-client.web.app
 
+How to login:
+email: admin@mail.com
+password: thisisnotapassword
+
 ### Products
 
 **Create Product**
