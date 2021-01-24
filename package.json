@@ -12,7 +12,7 @@
     "db:migrate:test": "NODE_ENV=test npm run db:migrate",
     "dev": "NODE_ENV=development nodemon bin/http.js",
     "test": "NODE_ENV=test npx jest",
-    "start": "node app.js"
+    "start": "node bin/http.js"
   },
   "repository": {
     "type": "git",
