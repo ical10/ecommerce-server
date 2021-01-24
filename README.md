@@ -24,14 +24,14 @@ password: thisisnotapassword
 
 * **Data Params**
     
-    **Content:** `{ 
+    **Content:** ```{ 
     name: 'nice headset',
     image_url: 'https://media.wired.com/photos/5e7164aeb9399f00096a2ae6/1:1/w_1800,h_1800,c_limit/Gear-Mont-Blanc-Smart-Headphones-Gold-Front-SOURCE-Mont-Blanc.jpg',
     price: 120000,
     stock: 5,
     category: 'electronics'
     }
-    `
+    ```
 
 * **Success Response:**
   
