@@ -7,6 +7,8 @@ This server is built with test suites with TDD.
 - email: admin@mail.com
 - password: thisisnotapassword
 
+#### SECRET_CODE=secret
+
 ### Products
 
 **Create Product**
