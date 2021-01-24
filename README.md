@@ -24,7 +24,9 @@ password: thisisnotapassword
 
 * **Data Params**
     
-    **Content:** ```{ 
+    **Content:** 
+    ```
+    { 
     name: 'nice headset',
     image_url: 'https://media.wired.com/photos/5e7164aeb9399f00096a2ae6/1:1/w_1800,h_1800,c_limit/Gear-Mont-Blanc-Smart-Headphones-Gold-Front-SOURCE-Mont-Blanc.jpg',
     price: 120000,
@@ -36,7 +38,9 @@ password: thisisnotapassword
 * **Success Response:**
   
   * **Code:** 201 OK <br />
-      **Content:** `{ 
+      **Content:** 
+      ```
+      { 
       id: 1,
       name: 'nice headset',
       image_url: 'https://media.wired.com/photos/5e7164aeb9399f00096a2ae6/1:1/w_1800,h_1800,c_limit/Gear-Mont-Blanc-Smart-Headphones-Gold-Front-SOURCE-Mont-Blanc.jpg',
@@ -46,22 +50,26 @@ password: thisisnotapassword
       updatedAt: '2021-01-18T10:38:05.747Z',
       createdAt: '2021-01-18T10:38:05.747Z'
       }
-      `
+      ```
 
 * **Error Response:**
 
   * **Code:** 401 Unauthorised <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Not authorised'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Name required',
         'Image_url required',
@@ -69,69 +77,81 @@ password: thisisnotapassword
         'Stock required'
       ]
       }
-      `
+      ```
 
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Price must be greater than zero',
         'Stock must be greater than zero'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Price must be a valid number',
         'Stock must be a valid number'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Name must contain only alphanumeric characters'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Image_url must contain a url'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-  **Content:** `{
+  **Content:** 
+  ```
+  {
   'errors': [
     'Number too big'
   ]
   }
-  `
+  ```
 
     OR
 
   * **Code:** 400 Bad Request <br />
-  **Content:** `{
+  **Content:** 
+  ```
+  {
   'errors': [
     'Max characters for string exceeded'
   ]
   }
-  `
+  ```
 
 * **Sample Call:**
 
@@ -153,18 +173,22 @@ password: thisisnotapassword
 
 * **Data Params**
     
-    **Content:** `{ 
+    **Content:** 
+    ```
+    { 
     name: 'nice headset',
     image_url: 'https://media.wired.com/photos/5e7164aeb9399f00096a2ae6/1:1/w_1800,h_1800,c_limit/Gear-Mont-Blanc-Smart-Headphones-Gold-Front-SOURCE-Mont-Blanc.jpg',
     stock: 3,
     price: 200000
     }
-    `
+    ```
 
 * **Success Response:**
   
   * **Code:** 201 OK <br />
-      **Content:** `{ 
+      **Content:** 
+      ```
+      { 
       id: 1,
       name: 'nice headset',
       image_url: 'https://media.wired.com/photos/5e7164aeb9399f00096a2ae6/1:1/w_1800,h_1800,c_limit/Gear-Mont-Blanc-Smart-Headphones-Gold-Front-SOURCE-Mont-Blanc.jpg',
@@ -173,68 +197,80 @@ password: thisisnotapassword
       updatedAt: '2021-01-18T10:38:05.747Z',
       createdAt: '2021-01-18T10:38:05.747Z'
       }
-      `
+      ```
 
 * **Error Response:**
 
   * **Code:** 401 Unauthorised <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Not authorised'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Price must be greater than zero',
         'Stock must be greater than zero'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Name must contain only alphanumeric characters'
       ]
       }
-      `
+      ```
       
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Image_url must contain a url'
       ]
       }
-      `
+      ```
 
     OR
 
   * **Code:** 400 Bad Request <br />
-  **Content:** `{
+  **Content:** 
+  ```
+  {
   'errors': [
     'Number too big'
   ]
   }
-  `
+  ```
 
     OR
 
   * **Code:** 400 Bad Request <br />
-  **Content:** `{
+  **Content:** 
+  ```
+  {
   'errors': [
     'Max characters for string exceeded'
   ]
   }
-  `
+  ```
 
 **Fetch All Products**
 ----
@@ -256,7 +292,9 @@ password: thisisnotapassword
 * **Success Response:**
   
     * **Code:** 200 <br />
-    **Content:** `[
+    **Content:** 
+    ```
+    [
     {
           id: 1,
         name: 'nice headphones',
@@ -277,7 +315,8 @@ password: thisisnotapassword
     updatedAt: '2021-01-18T10:38:05.747Z',
     createdAt: '2021-01-18T10:38:05.747Z'
     }
-  ]`
+    ]
+  ```
  
 * **Error Response:**
 
@@ -307,7 +346,8 @@ password: thisisnotapassword
 * **Success Response:**
   
     * **Code:** 200 <br />
-    **Content:** `
+    **Content:** 
+    ```
     {
           id: 1,
         name: 'nice headphones',
@@ -317,7 +357,8 @@ password: thisisnotapassword
         category: 'electronics',
     updatedAt: '2021-01-18T10:38:05.747z',
     createdAt: '2021-01-18T10:38:05.747Z'
-    }`
+    }
+    ```
  
 * **Error Response:**
 
@@ -347,25 +388,28 @@ password: thisisnotapassword
 * **Success Response:**
   
   * **Code:** 200 <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'confirmDelete':
           [
             'Product deleted'
           ]     
       }
-      `
+      ```
  
 * **Error Response:**
 
   * **Code:** 401 <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': 
         [
         'Not authorised'
         ]
       }
-      
-      `
+      ```
 
 * **Sample Call:**
 
@@ -389,49 +433,60 @@ password: thisisnotapassword
 
 * **Data Params**
     
-    **Content:** `{ 
+    **Content:** 
+    ```
+    { 
     email: 'admin@mail.com',
     password: 'thisisnotapassword'
     }
-    `
+    ```
 
 * **Success Response:**
   
   * **Code:** 200 OK <br />
-      **Content:** `{ 
+      **Content:** 
+      ```
+      { 
       access_token: <random_access_token_here>
       }
-      `
+      ```
 
 * **Error Response:**
 
   * **Code:** 401 Unauthorised <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
        'errors':   
           [
            'Wrong email / password'
           ]
-      }`
+      }
+      ```
 
     OR
 
   * **Code:** 400 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
         'Email / password must be filled'
       ]
       }
-      `
+      ```
 
     OR
 
   * **Code:** 404 Bad Request <br />
-      **Content:** `{
+      **Content:** 
+      ```
+      {
       'errors': [
       'Not found'
       ]
       }
-      `
+      ```
 
 * **Sample Call:**
 
