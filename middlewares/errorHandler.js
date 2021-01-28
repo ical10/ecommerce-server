@@ -19,6 +19,10 @@ const errorHandler = (err, req, res, next) => {
         errors.push('Not authorised')
         res.status(401).json({ errors })
         break
+      case 'StockExceeded':
+        errors.push('Not enough stock')
+        res.status(400).json({ errors })
+        break
       case 'SequelizeDatabaseError':
         if (err.message === 'value too long for type character varying(255)') {
           errors.push('Max characters for string exceeded')
@@ -29,6 +33,14 @@ const errorHandler = (err, req, res, next) => {
           errors.push('Number too big')
           res.status(400).json({ errors })
         }
+        break
+      case 'ConflictError':
+        errors = err.errors.map(error => error.message)
+        res.status(409).json({ errors })
+        break
+      case 'JsonWebTokenError':
+        errors.push('Invalid credentials')
+        res.status(401).json({ errors })
         break
       default:
         errors = err.errors.map(error => error.message)

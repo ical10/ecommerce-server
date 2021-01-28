@@ -6,22 +6,23 @@ const authenticate = async (req, res, next) => {
   try {
     if (req.headers.access_token) {
       const decodedPayload = await verifyToken(req.headers.access_token)
-      const foundUser = await User.findOne({
-        where: {
-          email: decodedPayload.email
+      if (!decodedPayload) {
+        next({ name: 'JsonWebTokenError' })
+      } else {
+        const foundUser = await User.findOne({
+          where: {
+            email: decodedPayload.email
+          }
+        })
+        if (!foundUser) {
+          next({ name: 'ResourceNotFound' })
+        } else {
+          req.user = {
+            id: decodedPayload.id,
+            role: decodedPayload.role
+          }
+          next()
         }
-      })
-      if (!foundUser) {
-        next({ name: 'ResourceNotFound' })
-      } else if (foundUser.role !== 'admin') {
-        next({ name: 'NoCredentials' })
-      }
-      else {
-        req.user = {
-          id: decodedPayload.id,
-          role: decodedPayload.role
-        }
-        next()
       }
     } else {
       next({ name: 'NoCredentials' })
@@ -36,25 +37,34 @@ const authorize = (req, res, next) => {
 
   const idProduct = +req.params.id
 
-  Product.findOne({
-    where: {
-      id: idProduct
+  if (idProduct) {
+    Product.findOne({
+      where: {
+        id: idProduct
+      }
+    })
+      .then(foundProduct => {
+        if (!foundProduct) {
+          next({ name: "ResourceNotFound" })
+        }
+        else if (req.user.role !== 'admin') {
+          next({ name: "NoCredentials" })
+        }
+        else {
+          next()
+        }
+      })
+      .catch(err => {
+        next(err)
+      })
+  } else {
+    if (req.user.role !== 'admin') {
+      next({ name: 'NoCredentials' })
+    } else {
+      next()
     }
-  })
-    .then(foundProduct => {
-      if (!foundProduct) {
-        next({ name: "ResourceNotFound" })
-      }
-      else if (req.user.role !== 'admin') {
-        next({ name: "NoCredentials" })
-      }
-      else {
-        next()
-      }
-    })
-    .catch(err => {
-      next(err)
-    })
+  }
+
 }
 
 module.exports = {
