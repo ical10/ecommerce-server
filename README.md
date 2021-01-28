@@ -4,7 +4,12 @@ This server is built with test suites with TDD.
 - For deployed version, please visit https://ecommerce-cms-esd20-client.web.app
 
 #### How to login:
+For admin
 - email: admin@mail.com
+- password: thisisnotapassword
+
+For already created user
+- email: user@mail.com 
 - password: thisisnotapassword
 
 #### SECRET_CODE=secret
