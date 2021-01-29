@@ -39,7 +39,7 @@ router.post('/send', (req, res, next) => {
   })
 })
 
-router.use('/products', productsRouter)
+router.use('/products', authenticate, productsRouter)
 router.use('/carts', authenticate, cartsRouter)
 
 module.exports = router

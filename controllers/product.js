@@ -17,7 +17,7 @@ class ProductController {
   }
 
   static update (req, res, next) {
-    const { stock, price, name, image_url } = req.body
+    const { stock, price, name, imageUrl } = req.body
     const id = +req.params.id
 
     Product.findByPk(id)
@@ -26,10 +26,11 @@ class ProductController {
           stock,
           price,
           name,
-          image_url
+          image_url: imageUrl
         })
       })
       .then(updatedProduct => {
+        console.log(">>>>", updatedProduct)
         res.status(200).json(updatedProduct)
       })
       .catch(next)
@@ -70,9 +71,7 @@ class ProductController {
     Product.findByPk(id)
       .then(product => {
         if (product) {
-          const resp = []
-          resp.push(product)
-          res.status(200).json(resp)
+          res.status(200).json(product)
         } else {
           next({ name: 'ResourceNotFound' })
         }

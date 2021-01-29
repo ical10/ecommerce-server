@@ -52,7 +52,6 @@ class UserController {
               email: user.email,
               role: user.role
             }
-
             const access_token = createToken(payload)
 
             return res.status(200).json({ access_token })
